@@ -1,7 +1,40 @@
 doctype html
 html
-  head
+  head(lang="en")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    meta( name='description', content='CrimeSpotter' )
+
+    //- bootstap 
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
+  body(style="padding-bottom:10rem;")
+    .container
+
+    script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+    script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
+    script( src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js")
+
+   
+    nav.navbar.navbar-default( role="navigator")
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#navbar-inverse",aria-expanded="false", aria-controls="navbar")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="#") CrimeSpotter
+    #navbar-inverse.collapse.navbar-collapse
+            ul.nav.navbar-nav
+                li.active: a( href="#") Home
+                li: a( href="about") About
+                li: a(href="contact") Contact us
+        .jumbotron
+          h1  Welcome to CrimeSpotter
+          p See where the main crime spots are. before you head there
+
+        block content
+    
+  
