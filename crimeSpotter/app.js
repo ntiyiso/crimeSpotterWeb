@@ -6,8 +6,21 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 
+
+// firebase
+var firebase = require('firebase/app')
+require('firebase/auth');
+require('firebase/database');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var about = reqire('./routes/about');
+
+firebase.initializeApp({
+    serviceAccount: "./config/gogle-services.json",
+    databaseUrl: "https://crime-spotter.firebaseio.com/",
+});
+
 
 var app = express();
 
@@ -25,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/about', about);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
