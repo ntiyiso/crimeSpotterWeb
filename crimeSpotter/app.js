@@ -8,19 +8,12 @@ var bodyParser = require('body-parser');
 
 
 // firebase
-var firebase = require('firebase/app')
-require('firebase/auth');
-require('firebase/database');
+var firebase = require('firebase')
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var about = reqire('./routes/about');
-
-firebase.initializeApp({
-    serviceAccount: "./config/gogle-services.json",
-    databaseUrl: "https://crime-spotter.firebaseio.com/",
-});
-
+var about = require('./routes/about');
 
 var app = express();
 
